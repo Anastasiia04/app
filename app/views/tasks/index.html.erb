@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Incomplete Tasks</h1>
+<div class="incomplete-tasks">
+	<% @incomplete_tasks.each do |task| %>
+		<%= render task %>
+	<% end %>
+</div>
+
+<div class="new-task-form"></div>
+<%= link_to 'New Task', new_task_path, remote: true, class: "new-task-link" %>
+
+<h1>Complete Tasks</h1>
+<div class="complete-tasks">
+	<% @complete_tasks.each do |task| %>
+		<b><%= task.name %></b> by <%= task.user.email %>
+		<br>
+	<% end %> 
+</div>
+
